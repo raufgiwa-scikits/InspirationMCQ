@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>MCQ Quiz</title>
+</head>
+<body>
+    <h1>MCQ Quiz</h1>
+    <form method="post">
+        {%  for q in questions %}
+
+
+        <p> {{ q.question }}</p>
+            {% for choice in q.choices %}
+                <input type="radio" name="question-{{q.no}}" value="{{ choice }}" required>
+                {{ choice }}<br>
+            {% endfor %}
+
+        {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
